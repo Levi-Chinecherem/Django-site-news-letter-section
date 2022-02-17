@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+{% load widget_tweaks %}
+{% load static %}
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1">
+		
+		<title>News Letter</title>
+		
+		<!-- Loading third party fonts -->
+		<link href="{% static 'news_letter/fonts/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
+		<link href="{% static 'news_letter/fonts/novecento-font/novecento-font.css' %}" rel="stylesheet" >
+
+		<!-- Loading main css file -->
+		<link href="{% static 'news_letter/css/style.css' %}" rel="stylesheet" >
+		
+		<!--[if lt IE 9]>
+		<script src="{% static 'news_letter/js/ie-support/html5.js' %}"></script>
+		<script src="{% static 'news_letter/js/ie-support/respond.js'  %}"></script>
+		<![endif]-->
+
+	</head>
+
+
+	<body>
+		
+		<div id="site-content">
+			
+			<header class="site-header">
+				<div class="container">
+					<a href="index.html" id="branding">
+						<img src="{% static 'news_letter/images/logo.png' %}" alt="Company Name" class="logo">
+						<div class="branding-copy">
+							<h1 class="site-title">Levi's Company</h1>
+							<small class="site-description">be part of our news body...</small>
+						</div>
+					</a>
+			<section class="site-footer">
+				<div class="container">
+					<div class="subscribe-form">
+						<form method="post">
+							{% csrf_token %}
+							<label for="#">
+								<span>Do you want to get news?</span>
+								<span>Join our news letter</span>
+							</label>
+							<div class="control">
+								{% render_field form.email class="input" type="text" placeholder="Enter your email to subscribe..." %}
+								<button type="submit"><img src="{% static 'news_letter/images/icon-envelope.png' %}" alt=""></button>
+						</form>
+							</div>
+					</div>
+					<div class="social-links">
+						<a href="#"><i class="fa fa-facebook"></i></a>
+						<a href="#"><i class="fa fa-twitter"></i></a>
+						<a href="#"><i class="fa fa-google-plus"></i></a>
+						<a href="#"><i class="fa fa-pinterest"></i></a>
+					</div>
+					<div class="copy">
+						<p>Copyright 2014 Company name. Designed by Themeezy. All rights reserved.</p>
+					</div>
+				</div>
+			</section> <!-- .site-footer -->
+
+				<a href="index.html" id="branding">
+					<div class="branding-copy">
+						<h1 class="site-title">Levi Chinecherem Chidi ~~></h1>
+						<small class="site-description">Dare to Code!.</small>
+					</div>
+				</a>
+			</header> <!-- .site-header -->
+		</div> <!-- #site-content -->
+
+		
+
+		<script src="{% static 'news_letter/js/jquery-1.11.1.min.js' %}"></script>
+		<script src="{% static 'news_letter/js/plugins.js' %}"></script>
+		<script src="{% static 'news_letter/js/app.js' %}"></script>
+		
+	</body>
+
+</html>
